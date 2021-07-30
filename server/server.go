@@ -1,3 +1,4 @@
+// ルーティングの設定を行う
 package server
 
 import (
@@ -13,6 +14,7 @@ func Init() {
 
 func router() *gin.Engine {
 	r := gin.Default()
+	// ユーザ関連のURLとコントローラの紐づけ
 	u := r.Group("/users")
 	{
 		ctrl := controllers.UserController{}

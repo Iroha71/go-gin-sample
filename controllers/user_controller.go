@@ -1,3 +1,4 @@
+// コントローラ：ルーティングパッケージ(server.go)によって呼び出される
 package controllers
 
 import (
@@ -12,6 +13,7 @@ import (
 type UserController struct{}
 
 func (pc UserController) Index(c *gin.Context) {
+	// sql発行パッケージからGetAllを呼び出す
 	var u repository.UserRepository
 	p, err := u.GetAll()
 	if err != nil {

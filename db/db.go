@@ -1,3 +1,4 @@
+// DBへの接続を行うクラス
 package db
 
 import (
@@ -12,6 +13,7 @@ var (
 	err error
 )
 
+// 初期化：DB接続・初期レコード追加
 func Init() {
 	db, err = gorm.Open("postgres", "host=localhost port=5432 user=postgres dbname=gomodtest password=postgres sslmode=disable")
 	if err != nil {
@@ -36,6 +38,7 @@ func Close() {
 	}
 }
 
+// マイグレーション：テーブル作成
 func autoMigration() {
 	db.AutoMigrate(&models.User{})
 	db.AutoMigrate(&models.Post{})

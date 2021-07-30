@@ -1,3 +1,4 @@
+// DBに対してsqlを発行するクラス
 package repository
 
 import (

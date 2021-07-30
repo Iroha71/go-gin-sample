@@ -1,3 +1,4 @@
+// ユーザオブジェクトの定義
 package models
 
 type User struct {
